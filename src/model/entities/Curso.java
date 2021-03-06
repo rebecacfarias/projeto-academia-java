@@ -1,4 +1,4 @@
-package entities;
+package model.entities;
 
 public class Curso {
 	private double codigo;
@@ -30,6 +30,7 @@ public class Curso {
 		this.nome = nome;
 	}
 	
+	@Override
 	public String toString(){
 		    return "Nome: "+nome+", Codigo: "+codigo;
 	}

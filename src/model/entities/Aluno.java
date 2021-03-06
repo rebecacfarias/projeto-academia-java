@@ -1,4 +1,4 @@
-package entities;
+package model.entities;
 
 public class Aluno {
 	private String nome;
@@ -38,6 +38,7 @@ public class Aluno {
 		this.curso = curso;
 	}
 
+	@Override
 	public String toString(){
 	   return "Nome: "+nome+", CPF: "+cpf+", Idade: "+idade+", Curso: "+curso.getNome();
 	}
