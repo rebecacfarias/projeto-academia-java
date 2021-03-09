@@ -9,8 +9,8 @@ public class RepositorioAlunosArray {
 		indice = 0;
 	}
 	
-	public void inserir(Aluno c) {
-		alunos[indice] = c;
+	public void inserir(Aluno a) {
+		alunos[indice] = a;
 		indice++;
 	}
 	
