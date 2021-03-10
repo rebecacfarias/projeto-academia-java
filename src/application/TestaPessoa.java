@@ -8,9 +8,7 @@ package application;
  * */
 
 
-import model.data.RepositorioPessoa;
-import model.data.RepositorioPessoaArray;
-import model.data.RepositorioPessoaLista;
+import model.data.*;
 import model.entities.Aluno;
 import model.entities.Curso;
 import model.entities.Pessoa;
