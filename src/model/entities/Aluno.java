@@ -1,36 +1,13 @@
 package model.entities;
 
-public class Aluno {
-	private String nome;
-	private String cpf;
-	private int idade;
+public class Aluno extends Pessoa{
 	private Curso curso;
-
+	
 	public Aluno(String nome, String cpf, int idade, Curso curso) {
-		
-		this.nome = nome;
-		this.cpf = cpf;
-		this.idade = idade;
+		super(nome, cpf, idade);
 		this.curso = curso;
 	}
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public String getCpf() {
-		return cpf;
-	}
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-	public int getIdade() {
-		return idade;
-	}
-	public void setIdade(int idade) {
-		this.idade = idade;
-	}
+	
 	public Curso getCurso() {
 		return curso;
 	}
@@ -39,7 +16,11 @@ public class Aluno {
 	}
 
 	@Override
-	public String toString(){
-	   return "Nome: "+nome+", CPF: "+cpf+", Idade: "+idade+", Curso: "+curso.getNome();
+	public String toString() {
+		return super.toString()+", Curso: " + curso.getNome();
 	}
+	
+	
+
+	
 }
