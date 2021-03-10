@@ -49,20 +49,19 @@ public class RepositorioPessoaArray extends RepositorioPessoa {
 	}
 	
 	@Override
-	public void exibirAlunos() {
+	public void exibir() {
+		System.out.println("\nLISTA DE ALUNOS:");
 		for(Pessoa p: pessoas){
 			if(p!=null && p instanceof Aluno)
 				System.out.println(p);
 		}
-	}
-	
-	@Override
-	public void exibirProfessores() {
+		System.out.println("\n\nLISTA DE PROFESSORES:");
 		for(Pessoa p: pessoas){
 			if(p!=null && p instanceof Professor)
 				System.out.println(p);
 		}
 	}
+	
 	
 	
 

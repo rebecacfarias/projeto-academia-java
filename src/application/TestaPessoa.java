@@ -42,21 +42,21 @@ public class TestaPessoa {
 		   System.out.println("\n\n---------- TESTE DE PROCURAR ----------\n");
 		   Pessoa alunoProcurado = rep.procurar("003");
 		   if(alunoProcurado != null)
-			   System.out.println("PESSOA PROCURADO(003): " + alunoProcurado);
+			   System.out.println("PESSOA PROCURADA(003): " + alunoProcurado);
 		   else 
 			   System.out.println("PESSOA NÃO ENCONTRADO!"); 
 
 		   System.out.println("\n\n---------- TESTE DE REMOÇÃO, INSERÇÃO E EXIBIÇÃO ----------");
 		   
 		   System.out.println("\n>>>>> LISTA DE PESSOAS ANTES DA REMOÇÃO <<<<<<");
-		   rep.exibirTodos();
+		   rep.exibir();
 		   
 		   rep.remover("003");
 		   rep.remover("005");
 
 		   System.out.println("\n\n>>>>> LISTA DE PESSOAS ATUALIZADA <<<<<<");
 		   System.out.println("(CPF a ser removido: 005, 003)\n");
-		   rep.exibirTodos();
+		   rep.exibir();
 		   
 		   
 		   System.out.println("\n\n---------- PROCURANDO PESSOA APAGADA ----------\n");

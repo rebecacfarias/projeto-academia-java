@@ -9,16 +9,7 @@ public abstract class RepositorioPessoa {
 	public abstract Pessoa procurar(String numCPF);
 	
 	public abstract void remover(String numCPF);
-	
-	public abstract void exibirAlunos();
-	
-	public abstract void exibirProfessores();
-	
-	public void exibirTodos() {
-		System.out.println("\nLISTA DE ALUNOS:");
-		exibirAlunos();
-		System.out.println("\n\nLISTA DE PROFESSORES:");
-		exibirProfessores();	
-	}
+
+	public abstract void exibir();
 	
 }
