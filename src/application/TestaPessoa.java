@@ -5,7 +5,7 @@ package application;
 			Rayanne Augusto
 			Nayara Castro
 			Rebeca Farias
- * */
+* */
 
 
 import model.data.*;
@@ -29,7 +29,7 @@ public class TestaPessoa {
 		   
 		   RepositorioPessoa rep = new RepositorioPessoaLista();
 		   //RepositorioPessoa rep = new RepositorioPessoaArray(6);
-
+		   
 		   rep.inserir(aluno1);
 		   rep.inserir(aluno2);
 		   rep.inserir(aluno3);
@@ -39,6 +39,7 @@ public class TestaPessoa {
 
 		   System.out.println("\n\n---------- TESTE DE PROCURAR ----------\n");
 		   Pessoa alunoProcurado = rep.procurar("003");
+		   
 		   if(alunoProcurado != null)
 			   System.out.println("PESSOA PROCURADA(003): " + alunoProcurado);
 		   else 
@@ -62,5 +63,8 @@ public class TestaPessoa {
 			   System.out.println("NÃO ENCONTRADO! APAGOU!");
 		   else 
 			   System.out.println("ENCONTRADO! NÃO APAGOU!");
+		   
+		   System.out.println("\n\n---------- TENTANDO REMOVER PESSOA APAGADA ----------\n");
+		   rep.remover("003");
 	}
 }

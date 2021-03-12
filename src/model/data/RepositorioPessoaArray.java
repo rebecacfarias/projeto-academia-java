@@ -18,8 +18,8 @@ public class RepositorioPessoaArray extends RepositorioPessoa {
 		return pessoas;
 	}
 
-	public void inserir(Pessoa a) {
-		pessoas[indice] = a;
+	public void inserir(Pessoa p) {
+		pessoas[indice] = p;
 		indice++;
 	}
 	
@@ -27,24 +27,28 @@ public class RepositorioPessoaArray extends RepositorioPessoa {
 		Pessoa pessoa = null;
 		
 		for(Pessoa p : pessoas) {
-			if(p!=null && p.getCpf().equals(numCPF)) 
+			if(p!=null && p.getCpf().equals(numCPF)) {
 				pessoa = p;
+				break;
+			}	
 		}
-		
 		return pessoa;
 	}
 	
 	public void remover(String numCPF) {
+		boolean encontrou = false;
 		for(int i = 0; i<pessoas.length; i++) {
 			Pessoa aux = pessoas[i];
-			
 			if(aux!=null && aux.getCpf().equals(numCPF)) {
 				pessoas[i] = pessoas[indice-1];
 				pessoas[indice - 1] = null;
-				
 				indice--;
+				encontrou = true;
+				break;
 			}
-			
+		}
+		if(!encontrou) {
+			System.out.println("Nao encontrado.");
 		}
 	}
 	
@@ -61,8 +65,5 @@ public class RepositorioPessoaArray extends RepositorioPessoa {
 				System.out.println(p);
 		}
 	}
-	
-	
-	
 
 }

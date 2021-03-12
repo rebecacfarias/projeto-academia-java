@@ -53,5 +53,4 @@ public class RepositorioPessoaLista extends RepositorioPessoa {
 				System.out.println(p);
 		}
 	}
-
 }

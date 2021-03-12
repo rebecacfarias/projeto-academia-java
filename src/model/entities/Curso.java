@@ -5,6 +5,11 @@ public class Curso {
 	private String nome;
 	
 	
+	public Curso() {
+		codigo = 0;
+		nome = null;
+	}
+	
 	public Curso(double codigo, String nome) {
 		this.codigo = codigo;
 		this.nome = nome;

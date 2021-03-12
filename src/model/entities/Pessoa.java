@@ -5,6 +5,12 @@ public class Pessoa {
 	private String cpf;
 	private int idade;
 
+	public Pessoa() {
+		nome = null;
+		cpf = null;
+		idade = 0;
+	}
+	
 	public Pessoa(String nome, String cpf, int idade) {
 		this.nome = nome;
 		this.cpf = cpf;

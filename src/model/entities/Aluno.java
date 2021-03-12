@@ -1,7 +1,13 @@
 package model.entities;
 
 public class Aluno extends Pessoa{
+	
 	private Curso curso;
+	
+	public Aluno() {
+		super();
+		curso = null;
+	}
 	
 	public Aluno(String nome, String cpf, int idade, Curso curso) {
 		super(nome, cpf, idade);
