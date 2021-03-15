@@ -4,7 +4,7 @@ import model.entities.Aluno;
 import model.entities.Pessoa;
 import model.entities.Professor;
 
-public class RepositorioPessoaArray extends RepositorioPessoa {
+public class RepositorioPessoaArray implements RepositorioPessoa {
 	private Pessoa[] pessoas;
 	private int indice;
 	
@@ -18,11 +18,15 @@ public class RepositorioPessoaArray extends RepositorioPessoa {
 		return pessoas;
 	}
 
+	@Override
 	public void inserir(Pessoa p) {
-		pessoas[indice] = p;
-		indice++;
+		if(indice<pessoas.length) {
+			pessoas[indice] = p;
+			indice++;
+		}
 	}
 	
+	@Override
 	public Pessoa procurar(String numCPF) {
 		Pessoa pessoa = null;
 		
@@ -35,6 +39,7 @@ public class RepositorioPessoaArray extends RepositorioPessoa {
 		return pessoa;
 	}
 	
+	@Override
 	public void remover(String numCPF) {
 		boolean encontrou = false;
 		for(int i = 0; i<pessoas.length; i++) {
@@ -48,7 +53,7 @@ public class RepositorioPessoaArray extends RepositorioPessoa {
 			}
 		}
 		if(!encontrou) {
-			System.out.println("Nao encontrado.");
+			System.out.println("IMPOSSIVEL REMOVER - NAO ENCONTRADO");
 		}
 	}
 	

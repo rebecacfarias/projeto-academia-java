@@ -2,14 +2,14 @@ package model.data;
 
 import model.entities.Pessoa;
 
-public abstract class RepositorioPessoa {
-
-	public abstract void inserir(Pessoa p);
+public interface RepositorioPessoa {
 	
-	public abstract Pessoa procurar(String numCPF);
+	void inserir(Pessoa p);
 	
-	public abstract void remover(String numCPF);
+	Pessoa procurar(String numCPF);
+	
+	void remover(String numCPF);
 
-	public abstract void exibir();
+	void exibir();
 	
 }

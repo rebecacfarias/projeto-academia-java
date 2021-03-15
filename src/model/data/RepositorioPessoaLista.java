@@ -7,7 +7,7 @@ import model.entities.Aluno;
 import model.entities.Pessoa;
 import model.entities.Professor;
 
-public class RepositorioPessoaLista extends RepositorioPessoa {
+public class RepositorioPessoaLista implements RepositorioPessoa {
 	List<Pessoa> pessoas = new ArrayList<>();
 
 	@Override
@@ -36,7 +36,7 @@ public class RepositorioPessoaLista extends RepositorioPessoa {
 		}
 		
 		if(!encontrou) {
-			System.out.println("Nao encontrado.");
+			System.out.println("IMPOSSIVEL REMOVER - NAO ENCONTRADO");
 		}
 	}
 	

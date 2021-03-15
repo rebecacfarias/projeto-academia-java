@@ -29,7 +29,7 @@ public class TestaPessoa {
 		   
 		   RepositorioPessoa rep = new RepositorioPessoaLista();
 		   //RepositorioPessoa rep = new RepositorioPessoaArray(6);
-		   
+
 		   rep.inserir(aluno1);
 		   rep.inserir(aluno2);
 		   rep.inserir(aluno3);
