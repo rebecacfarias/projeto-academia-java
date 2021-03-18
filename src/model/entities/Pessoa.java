@@ -35,7 +35,6 @@ public class Pessoa {
 		this.idade = idade;
 	}
 
-
 	@Override
 	public String toString(){
 	   return "Nome: "+nome+", CPF: "+cpf+", Idade: "+idade;

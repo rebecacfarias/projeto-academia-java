@@ -1,5 +1,6 @@
 package model.data;
 
+import model.data.exceptions.InsertException;
 import model.entities.Aluno;
 import model.entities.Pessoa;
 import model.entities.Professor;
@@ -19,11 +20,13 @@ public class RepositorioPessoaArray implements RepositorioPessoa {
 	}
 
 	@Override
-	public void inserir(Pessoa p) {
-		if(indice<pessoas.length) {
-			pessoas[indice] = p;
-			indice++;
+	public void inserir(Pessoa p) throws InsertException{
+		if(indice>=pessoas.length) {
+			throw new InsertException();
 		}
+		pessoas[indice] = p;
+		indice++;
+
 	}
 	
 	@Override
