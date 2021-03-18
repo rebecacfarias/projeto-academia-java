@@ -27,6 +27,7 @@ public class AlunoDao implements AlunoDaoContract {
 		PreparedStatement st = null;
 		String sql = "INSERT INTO aluno (Nome, Cpf, Idade, CursoCodigo) VALUES (?, ?, ?, ?)";
 		int updates = 0;
+		CursoDao cursoDao = DaoFactory.createCursoDao();
 		
 		try {
 			st = connection.prepareStatement(sql);
@@ -39,7 +40,11 @@ public class AlunoDao implements AlunoDaoContract {
 			updates = st.executeUpdate();
 			
 		}catch(SQLIntegrityConstraintViolationException e){
-			System.out.println(" ERRO - NENHUM CURSO CADASTRADO");
+			if(cursoDao.procurar(aluno.getCurso().getCodigo()) == null) {
+				System.out.println("ERRO - CODIGO DO CURSO INVALIDO");
+			}else {
+				System.out.println("ERRO - CPF JÁ CADASTRADO");
+			}	
 		}catch(SQLException e) {
 			System.out.println(e.getMessage());
 		}finally {
@@ -65,6 +70,9 @@ public class AlunoDao implements AlunoDaoContract {
 			
 			updates = st.executeUpdate();
 			
+		}catch(SQLIntegrityConstraintViolationException e){
+			System.out.println("ERRO - CODIGO DO CURSO INVALIDO");
+		
 		}catch(SQLException e) {
 			System.out.println(e.getMessage());
 		}finally {
