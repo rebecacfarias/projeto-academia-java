@@ -17,7 +17,6 @@ import db.DbManager;
 import model.dao.AlunoDaoContract;
 import model.dao.DaoFactory;
 import model.entities.Aluno;
-import model.entities.Curso;
 
 public class AlunoDao implements AlunoDaoContract {
 	
