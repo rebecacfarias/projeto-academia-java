@@ -1,4 +1,8 @@
 package model.entities;
+/* CLASSE CURSO
+ * OBS: A classe Curso se relaciona com a classe Aluno;
+ * 
+ * */
 
 public class Curso {
 	private double codigo;

@@ -1,5 +1,9 @@
 package model.entities;
-
+/*
+ * CLASSE PROFESSOR
+ * OBS: Subclasse de Pessoa
+ * 
+ * */
 public class Professor extends Pessoa {
 	
 	private double salario;

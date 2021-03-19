@@ -1,7 +1,15 @@
 package validation;
 
+/*
+ * CLASSE ValidateFields
+ * Classe que possui métodos estáticos para validar entradas de usuário
+ * OBS: classe feita para ser utilizada em testes que solicitam os dados do usuário
+ * 
+ * */
+
 public final class ValidateFields {
 	
+	// FORMATAR CPF
 	public static String formatCpf(String cpf) {
 		cpf = cpf.toUpperCase().replaceAll("[A-Z]*", "");
 		cpf = cpf.replaceAll("\\.", "");
@@ -10,23 +18,15 @@ public final class ValidateFields {
 		return cpf;
 	}
 	
-	
+	// CHECAR VALIDADE DO CPF
 	public static boolean cpfIsValid(String cpf) {
-		cpf = formatCpf(cpf);
 		if(cpf.length() == 11) {
 			return true;
 		}
 		return false;
 	}
+
 	
-	//FALTA
-	public static boolean cpfAlreadyExists(String cpf) {
-		//buscar no banco aqui baseado no findByCpf
-		
-		return false;
-	}
-	
-	//FALTA testar para não gerar exceção, adicionar remoção de caracteres invalidos
 	/*
 	 * Método para formatação dos nomes
 	 * Primeira letra de cada nome maiúscula
@@ -46,14 +46,5 @@ public final class ValidateFields {
 
 		return formatedName.trim();
 	}
-	
-	//FALTA
-	public static boolean courseAlreadyExists(Double codigo) {
-		//checar se tá no banco findByCodigo
 
-		return false;
-	}
-	
-	
-	
 }

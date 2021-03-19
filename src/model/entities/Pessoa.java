@@ -1,6 +1,11 @@
 package model.entities;
+/* CLASSE PESSOA (ABSTRATA)
+ * OBS: A classe não possui métodos abstratos, porém para garantir que não será instanciada foi definida como abstrata;
+ * 		Apenas as classes filhas serão instanciadas no projeto.
+ * 
+ * */
 
-public class Pessoa {
+public abstract class Pessoa {
 	private String nome;
 	private String cpf;
 	private int idade;
@@ -16,6 +21,7 @@ public class Pessoa {
 		this.cpf = cpf;
 		this.idade = idade;
 	}
+	
 	public String getNome() {
 		return nome;
 	}

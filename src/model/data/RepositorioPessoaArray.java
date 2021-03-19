@@ -1,4 +1,9 @@
 package model.data;
+/*
+ * CLASSE RepositorioPessoaArray
+ * Implementação do Repositório com Array
+ * 
+ * */
 
 import model.data.exceptions.InsertException;
 import model.entities.Aluno;

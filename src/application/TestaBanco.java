@@ -1,4 +1,15 @@
 package application;
+/*Projeto - Academia Java
+*		@author: Grupo 2 -
+*			Isa Mariana Bernardo
+*			Rayanne Augusto
+*			Nayara Castro
+*			Rebeca Farias
+*			
+*			
+*	CLASSE DE TESTE PARA CRUD NO BANCO DE DADOS
+*
+* */
 
 import model.dao.DaoFactory;
 import model.dao.impl.AlunoDao;
@@ -12,6 +23,8 @@ import model.entities.Professor;
 public class TestaBanco {
 
 	public static void main(String[] args) {
+		
+//	BLOCO DE DECLARAÇÃO E INSTANCIAÇÃO DE OBJETOS TESTE
 		   Curso curso1 = new Curso(123, "ADS");
 		   Curso curso2 = new Curso(321, "Computação");
 		   Curso curso4 = new Curso(101, "Design");
@@ -23,13 +36,21 @@ public class TestaBanco {
 		   Pessoa professor1 = new Professor("Juliana", "12345678915", 20, 8000);
 		   Pessoa professor2 = new Professor("Julio", "12345678916", 20, 8000);
 		   
+		 
 		   
-		   //INSTANCIANDO OS DAOS ATRAVÉS DA DAO FACTORY
+//	INSTANCIANDO OS DAOS ATRAVÉS DA DAO FACTORY
 		   AlunoDao alunoDao = DaoFactory.createAlunoDao();
 		   ProfessorDao professorDao = DaoFactory.createProfessorDao();
 		   CursoDao cursoDao = DaoFactory.createCursoDao();
 
-
+		   
+		   
+/*
+ * BLOCO DE TESTES CRUD 
+ * (partes de atualização estão comentadas para efeito de visualização das alterações dos dados
+ * no momento da apresentação do projeto)
+ * */ 
+		   
 		   System.out.println("\n--------- TENTANDO CADASTRAR PESSOAS JÁ CADASTRADAS ---------");
 		   alunoDao.inserir((Aluno) aluno1);
 		   alunoDao.inserir((Aluno) aluno2);
@@ -80,7 +101,7 @@ public class TestaBanco {
 			   System.out.println("IMPOSSIVEL EXCLUIR - NÃO ENCONTRADO");
 		   }
 		   
-//		   if(professorDao.remover("12345678915")) {
+//		   if(professorDao.remover("12345678916")) {
 //			   System.out.println("Excluido!");
 //		   }else{
 //			   System.out.println("IMPOSSIVEL EXCLUIR - NÃO ENCONTRADO");
@@ -139,7 +160,17 @@ public class TestaBanco {
 			   System.out.println(a);
 		   }
 		   
-		   System.out.println("---------- TESTE TABELA CURSO ----------");
+		   System.out.println("\n\n---------- TESTE DE EXIBIR ALUNO POR CURSO ----------");
+		   for(Aluno a : alunoDao.alunoPorCurso(123)) {
+			   System.out.println(a);
+		   }
+		   
+		   
+//		   System.out.println("\n\n---------- ADICIONANDO AJUSTE NO SALÁRIO DOS PROFs ----------");
+//		   professorDao.ajusteSalarial(5);
+		   
+
+		   System.out.println("\n\n---------- TESTE TABELA CURSO ----------");
 		   
 		   System.out.println("\n>>> TENTANDO INSERIR CURSO JÁ CADSATRADO");
 		   cursoDao.inserir(curso1);

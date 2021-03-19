@@ -1,4 +1,9 @@
 package model.dao.impl;
+/*
+ * CLASSE CursoDao
+ * Classe que implementa as operações de CRUD para a tabela curso
+ * 
+ * */
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

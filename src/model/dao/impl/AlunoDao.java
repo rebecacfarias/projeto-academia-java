@@ -1,4 +1,9 @@
 package model.dao.impl;
+/*
+ * CLASSE AlunoDao
+ * Classe que implementa as operações de CRUD para a tabela aluno
+ * 
+ * */
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -176,10 +181,41 @@ public class AlunoDao implements AlunoDaoContract {
 		return lista;
 	}
 
+	
+	// MÉTODO PARA FILTRAR ALUNOS POR CURSO, BASEADO EM UM CÓDIGO 
 	@Override
-	public List<Aluno> alunoPorCurso(Curso curso) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Aluno> alunoPorCurso(double codigo) {
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		String sql = "SELECT aluno.* FROM aluno WHERE CursoCodigo = ?";
+		List<Aluno> lista = new ArrayList<>();
+		Aluno aluno;
+		CursoDao cursoDao = DaoFactory.createCursoDao();
+		
+		try {
+			st = connection.prepareStatement(sql);
+			st.setDouble(1,codigo);
+			
+			rs = st.executeQuery();
+			
+			while(rs.next()) {
+				aluno = new Aluno();
+				aluno.setNome(rs.getString("Nome"));
+				aluno.setCpf(rs.getString("Cpf"));
+				aluno.setIdade(rs.getInt("Idade"));
+				aluno.setCurso(cursoDao.procurar(rs.getDouble("CursoCodigo")));
+				
+				lista.add(aluno);
+			}
+			
+		}catch(SQLException e) {
+			System.out.println(e.getMessage());
+		}finally {
+			DbManager.closeStatement(st);
+			DbManager.closeResultSet(rs);
+		}
+		
+		return lista;
 	}
 
 }

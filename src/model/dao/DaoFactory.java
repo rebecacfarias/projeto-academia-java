@@ -1,4 +1,9 @@
 package model.dao;
+/*
+ * CLASSE DaoFactory
+ * Classe com métodos estáticos responsáveis por instanciar os DAOs
+ *  
+ * */
 
 import db.DbManager;
 import model.dao.impl.AlunoDao;

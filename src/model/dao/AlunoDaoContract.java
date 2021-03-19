@@ -1,4 +1,9 @@
 package model.dao;
+/*
+ * INTERFACE AlunoDaoContract
+ * Interface que estabelece os métodos que devem ser implementados pelo AlunoDao
+ *  
+ * */
 
 import java.util.List;
 
@@ -17,6 +22,6 @@ public interface AlunoDaoContract {
 	
 	List<Aluno> exibirAlunos();
 	
-	List<Aluno> alunoPorCurso(Curso curso);
+	List<Aluno> alunoPorCurso(double codigo);
 	
 }

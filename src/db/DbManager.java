@@ -1,4 +1,10 @@
 package db;
+/*
+ * CLASSE DbManager
+ * Classe responsável por:
+ *       Estabelecer o funcionamento da conexão com o banco
+ *       Fechar a conexão e também recursos(Statement, ResultSet) 
+ * */
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,10 +19,11 @@ public class DbManager {
 		private static String username = "developer";
 		private static String password = "56709199";
 		
-		//Retorna a conexão aberta. Se estiver nula, abre uma nova conexão.
+//		Retorna a conexão aberta. Se estiver nula, abre uma nova conexão.
 		public static Connection getConnection() {
 			if(connection == null) {
 				try {
+//	OBS: Com o conector 8.0.23 não é mais necessário registrar o Driver
 //					DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 					connection = DriverManager.getConnection(url, username, password);
 				}catch(SQLException e) {
@@ -27,7 +34,9 @@ public class DbManager {
 			return connection;
 			
 		}
+
 		
+//	MÉTODOS PARA FECHAR RECURSOS 
 		public static void closeConnection() {
 			if(connection != null) {
 				try {

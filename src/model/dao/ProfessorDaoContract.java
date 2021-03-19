@@ -1,4 +1,9 @@
 package model.dao;
+/*
+ * INTERFACE ProfessorDaoContract
+ * Interface que estabelece os métodos que devem ser implementados pelo ProfessorDao
+ *  
+ * */
 
 import java.util.List;
 
@@ -13,7 +18,7 @@ public interface ProfessorDaoContract {
 	
 	boolean remover(String cpf);
 	
-	boolean adicionarBonusAnual(Double porcentagem);
+	boolean ajusteSalarial(double porcentagem);
 	
 	List<Professor> exibirProfessores();
 }

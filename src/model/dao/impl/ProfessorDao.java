@@ -1,4 +1,9 @@
 package model.dao.impl;
+/*
+ * CLASSE ProfessorDao
+ * Classe que implementa as operações de CRUD para a tabela professor
+ * 
+ * */
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -129,13 +134,6 @@ public class ProfessorDao implements ProfessorDaoContract {
 	}
 
 	@Override
-	public boolean adicionarBonusAnual(Double porcentagem) {
-		
-		
-		return false;	
-	}
-
-	@Override
 	public List<Professor> exibirProfessores() {
 		PreparedStatement st = null;
 		ResultSet rs = null;
@@ -167,6 +165,30 @@ public class ProfessorDao implements ProfessorDaoContract {
 		}
 		
 		return lista;
+	}
+	
+	//MÉTODO QUE REALIZA UM AJUSTE SALARIAL BASEADO EM UMA PORCENTAGEM DE AUMENTO
+	@Override
+	public boolean ajusteSalarial(double porcentagem) {
+		PreparedStatement st = null;
+		String sql = "UPDATE professor SET Salario = (Salario * ?)";
+		int updates = 0;
+		
+		try {
+			st = connection.prepareStatement(sql);
+			
+			st.setDouble(1, 1+(porcentagem/100));
+			
+			
+			updates = st.executeUpdate();
+			
+		}catch(SQLException e) {
+			System.out.println(e.getMessage());
+		}finally {
+			DbManager.closeStatement(st);
+		}
+		
+		return (updates>0 ? true : false);	
 	}
 
 }

@@ -1,4 +1,9 @@
 package model.data;
+/*
+ * CLASSE RepositorioPessoaArray
+ * Implementação do Repositório com Lista
+ * 
+ * */
 
 import java.util.ArrayList;
 import java.util.List;

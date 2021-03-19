@@ -5,6 +5,9 @@ package application;
 			Rayanne Augusto
 			Nayara Castro
 			Rebeca Farias
+			
+			
+	CLASSE DE TESTE PARA OS REPOSITÓRIOS VERSÃO ARRAY E LISTA
 * */
 
 import model.data.*;
@@ -16,7 +19,8 @@ import model.entities.Professor;
 
 public class TestaPessoa {
 	public static void main(String[] args) {
-
+		
+//	BLOCO DE DECLARAÇÃO E INSTANCIAÇÃO DE OBJETOS TESTE
 		Curso curso1 = new Curso(123, "ADS");
 		Curso curso2 = new Curso(321, "Computação");
 
@@ -30,6 +34,7 @@ public class TestaPessoa {
 		RepositorioPessoa rep = new RepositorioPessoaLista();
 		//RepositorioPessoa rep = new RepositorioPessoaArray(6);
 
+//	BLOCO DE INSERÇÃO E TRATAMENTO	
 		try {
 			rep.inserir(aluno1);
 			rep.inserir(aluno2);
@@ -42,6 +47,7 @@ public class TestaPessoa {
 			System.out.println(e.getMessage());
 		}
 
+//  BLOCO DE EXIBIÇÃO DE TESTES		
 		System.out.println("\n\n---------- TESTE DE PROCURAR ----------\n");
 		Pessoa alunoProcurado = rep.procurar("003");
 

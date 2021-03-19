@@ -1,4 +1,10 @@
 package model.data;
+/*
+ * INTERFACE RepositorioPessoa  
+ * Interface que estabelece os métodos necessários para os Repositórios(Array e Lista)
+ * 
+ * */
+
 
 import model.data.exceptions.InsertException;
 import model.entities.Pessoa;

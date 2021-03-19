@@ -1,4 +1,9 @@
 package model.dao;
+/*
+ * INTERFACE CursoDaoContract
+ * Interface que estabelece os métodos que devem ser implementados pelo CursoDao
+ *  
+ * */
 
 import java.util.List;
 

@@ -1,4 +1,10 @@
 package model.entities;
+/*
+ * CLASSE PROFESSOR
+ * OBS: Subclasse de Pessoa
+ *      Relaciona-se com a classe Curso
+ *      
+ * */
 
 public class Aluno extends Pessoa{
 	
